@@ -1,0 +1,101 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #019b69;
+}
+
+button, .btn-primary {
+    background-color: #019b69;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;    
+}
+
+button:hover, .btn-primary:hover {
+    background-color: #017a52;
+}
+
+input, select {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: 1px solid #019b69;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    color: #019b69;
+}
+
+input::placeholder {
+    color: #AAAAAA;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    background-color: #019b69;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 20px #019b69;
+    z-index: 1000;
+}
+
+.company-logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.company-name {
+    color: black;
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#root {
+    padding-top: 80px;
+}
+
+.table th, .table td {
+    padding: 15px;
+}
+
+.table thead th {
+    background-color: #019b69;
+    color: #fff;
+}
+
+.table tbody tr:hover {
+    background-color: #99ccff;
+}
+
+button {
+    margin: 5px;    
+}
