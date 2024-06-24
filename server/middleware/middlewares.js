@@ -1,9 +1,16 @@
 const corsOptions = {
-    origin: ['http://localhost:3000', 'http://192.168.174.1:3000'],
+    origin: [
+        'http://localhost:3000',
+        'http://192.168.174.1:3000',
+        'https://time-manager-nine.vercel.app',
+        'https://urquhartproductions.ca'
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-    optionsSuccessStatus: 204 
+    optionsSuccessStatus: 204,
+    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization' // Add any other headers your frontend may send
 };
+
 
 const logSession = (req, res, next) => {
     if (req.session && req.session.user) {
