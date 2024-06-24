@@ -1,8 +1,14 @@
 node_modules/
-.env 
+#.env 
 .todo
 id_rsa
 id_rsa.pub
 client/public/logo.png
 client/public/icon.png
 .vercel
+#Procfile
+server/node_modules
+server/scripts
+client/public/icon.png
+client/public/logo.png
+client/node_modules
