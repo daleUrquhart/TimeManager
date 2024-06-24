@@ -8,7 +8,7 @@ const corsOptions = {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
-    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization' // Add any other headers your frontend may send
+    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization' 
 };
 
 
