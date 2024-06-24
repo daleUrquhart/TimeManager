@@ -5,3 +5,4 @@ id_rsa
 id_rsa.pub
 client/public/logo.png
 client/public/icon.png
+.vercel

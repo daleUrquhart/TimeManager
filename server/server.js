@@ -1,8 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session');
-const { sessionConfig } = require('./session'); 
-const { corsOptions, logSession } = require('./middleware/middlewares'); 
+const session = require('express-session'); 
+const { corsOptions, sessionConfig, logSession } = require('./middleware/middlewares'); 
 const routes = require('./routes');
 const { sequelize } = require('./db');
 const cors = require('cors');
