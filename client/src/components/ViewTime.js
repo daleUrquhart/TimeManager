@@ -22,7 +22,19 @@ const ViewTime = () => {
       if (response.ok) {
         const data = await response.json();
         if (Array.isArray(data.timeEntries)) {
-          setTimeEntries(data.timeEntries);
+          const sortedEntries = data.timeEntries.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+
+            if (dateA > dateB) return -1;
+            if (dateA < dateB) return 1;
+
+            const timeinA = new Date(`${a.date}T${a.timein}`);
+            const timeinB = new Date(`${b.date}T${b.timein}`);
+            return timeinA - timeinB;
+          });
+
+          setTimeEntries(sortedEntries);
         } else {
           setTimeEntries([]);
         }

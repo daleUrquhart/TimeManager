@@ -5,10 +5,12 @@ const { Op } = require('sequelize')
 const { verifyTimeEntry } = require('../utils/timeUtils')
 const { ensureAuthenticated, ensureAdmin } = require('../middleware/middlewares');
  
+// Add entry
 router.post('/', async (req, res) => {
     const { date, role, timein, workorder, subaccount, activity, timeout, employeeId } = req.body
     let userId = req.session.user.id 
-
+    console.log("Adding time entry for:",userId)
+    
     try { 
         if (req.session.user.access === 0 && employeeId) {
             userId = employeeId  
@@ -17,6 +19,7 @@ router.post('/', async (req, res) => {
         const overlap = await verifyTimeEntry(date, timein, timeout, userId)
 
         if (overlap) {
+            console.log("Time entry overlaps with existing data")
             return res.status(400).json({ message: 'Time entry overlaps with existing entry' })
         }
  
@@ -31,8 +34,10 @@ router.post('/', async (req, res) => {
             timeout
         })
 
+        console.log("Time entry added succesfully")
         res.json({ message: 'Time entry added successfully', timeEntry: newTimeEntry })
     } catch (error) {
+        console.log("error adding time entry")
         console.error('Error adding time entry:', error)
         res.status(500).json({ message: 'Error adding time entry' })
     }
